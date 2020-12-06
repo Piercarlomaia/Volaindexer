@@ -1,0 +1,73 @@
+{%extends "volai/header.html"%}
+
+
+{% load staticfiles %}
+
+{%block content %}
+  <div align="center">
+    <script src="https://www.lcwfab2.com/?number=4&cols=4&rows=1&verticalSpace=10px&horizontalSpace=10px&containerAlignment=center&iframeWidth=800px&infoWritePos=after&infoPos=outside&infoBackgroundColor=transparent&infoTextColor=%23000000&fontFamily=Arial&fontSize=14px&showName=1&showGender=1&showAge=1&showOnline=true&background=transparent&ratio=1&AuxiliaryCSS=.cw-info-ctn%7B%20z-index%3A%201%3B%20%7D%0A.crak_cams_ctn%7B%20margin%3A%200%20auto%3B%20%7D%0A&categories=teen&type=script&token=8026aae0-a001-11e9-815f-532824596e89"></script>
+  </div>
+  <h1 class="center align" style="color:white; margin-top:30px;">We are a Volafile Indexer, here you can find and add Volafile Room's</h1>
+
+  <div class="center align" style="margin-top:30px;">
+    <a style="color:black; font-weight:Bold" href="add.html" class="waves-effect waves-light btn-large purple accent-1"><i class="material-icons left">file_upload</i>Add Room's</a>
+
+  </div>
+
+
+  <table  id= "dataTables-example" style="width:100%; margin-top:30px;  max-width: 100%;" class="centered deep-purple accent-2  #ffffff white-text" >
+
+    <thead>
+
+      <tr>
+         <th>Room Name</th>
+         <th>Room password</th>
+         <th>Room Date add</th>
+         <th>Online Users</th>
+
+      </tr>
+    </thead>
+
+
+
+    <tbody>
+    {% for ro in roomss %}
+    <tr>
+      <td><a class ="white-text" target="_blank" rel="noopener noreferrer" href='{{ro.room_adress}}'>{{ro.room_name}}</a></td>
+      <td>{{ro.room_pass}}</td>
+      <td>{{ro.room_add}}</td>
+      <td>{{ro.room_viewers}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+{%endblock%}
+
+{% block javascript %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/cr-1.5.0/sc-2.0.0/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/cr-1.5.0/sc-2.0.0/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js"></script>
+<script>
+
+  $(document).ready(function() {
+      $.fn.dataTable.moment( 'MMMM D,YYYY, hh:mm', 'en' );
+      $('#dataTables-example').DataTable({
+      responsive: true,
+      "lengthChange": false,
+      "order": [[ 3, "desc" ]],
+      "language": {
+      "search": "Search"
+      }
+   });
+   });
+  </script>
+{% endblock %}

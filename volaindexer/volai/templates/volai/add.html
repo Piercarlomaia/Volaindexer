@@ -1,0 +1,23 @@
+{%extends "volai/header.html"%}
+
+{% load staticfiles %}
+
+{%block content %}
+  <style>
+  label {color:white;
+        font-weight:bold;
+        font-size:20px;
+  }
+  input {color:white;}
+
+  a:hover{
+      text-decoration: none;
+  }
+  </style>
+
+  <form method="POST" class="post-form white-text">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default purple accent-1 white-text">Save</button>
+  </form>
+{%endblock%}

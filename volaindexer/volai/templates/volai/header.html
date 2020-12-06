@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+  <head>
+        <meta name="propeller" content="ea95c4b71b676c7b6e4dd9e99c1906fb">
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8359751540107066",
+            enable_page_level_ads: true
+          });
+        </script>
+        <meta name="trafficjunky-site-verification" content="t5qtuu080" />
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142998640-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142998640-1');
+        </script>
+
+
+        <title>Volaindexer - Volafile Indexer</title>
+        <meta name='description' content='We are a Volafile Indexer, here you can find and add Volafile Rooms'>
+        <meta name="keywords" content="volaindexer, volafile, Volaindexer, Volafile, volafile rooms, volafile channels, best volafiles, periscope, Volafile Room's, volafile, vola file">
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="stylesheet"  href="{% static 'css/mystyle.css' %}">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+        </script>
+
+
+  </head>
+
+  <body class="deep-purple accent-2">
+
+
+    {% if messages %}
+      {% for message in messages %}
+        <script>M.toast({html:"{{message}}", displayLength:5000, classes:"purple darken-4"});</script>
+      {% endfor %}
+    {% endif %}
+    <nav>
+    <div class="nav-wrapper purple darken-4">
+      <a style="Font-size:50px;" href="/" class="brand-logo center purple-text text-accent-1">VolaIndexer</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+      <!--  <li><a href="add.html">Add Room's</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  {%block content %}
+  {%endblock%}
+
+  {%block javascript %}
+  {% endblock %}
+
+
+  </body>
+</html>
